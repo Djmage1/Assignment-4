@@ -10,7 +10,9 @@ function computerPlay() {
     return cpuMove;
 }
 
-function gamePlay() {
+function gamePlay(buttonID) {
+    playerMove = buttonID;
+
     computerPlay();
 
     alert("Bot plays: " + cpuMove + 
@@ -20,21 +22,25 @@ function gamePlay() {
 }
 
 function outcomeCalc() {
+    playerNumber = document.getElementById(playerScore).innerText;
+    cpuNumber = document.getElementById(cpuScore).innerText;
+    move = document.getElementById(moveDisplay).innerText;
+
     switch(playerMove) {
         case gameArray[0]:
             if(cpuMove == gameArray[0]) {
-                alert("DRAW");
+                move = "DRAW";
                 console.log("Player: " + playerCount + 
                             "\nBot: " + cpuCount);
             }
             else if(cpuMove == gameArray[1]) {
-                alert("You lose");
+                move = "You lose";
                 cpuCount++;
                 console.log("Player: " + playerCount + 
                             "\nBot: " + cpuCount);
             }
             else if(cpuMove == gameArray[2]) {
-                alert("You win");
+                move = "You win";
                 playerCount++;
                 console.log("Player: " + playerCount + 
                             "\nBot: " + cpuCount);
@@ -43,18 +49,18 @@ function outcomeCalc() {
 
         case gameArray[1]:
             if(cpuMove == gameArray[0]) {
-                alert("You win");
+                move = "You win";
                 playerCount++;
                 console.log("Player: " + playerCount + 
                             "\nBot: " + cpuCount);
             }
             else if(cpuMove == gameArray[1]) {
-                alert("DRAW");
+                move = "DRAW";
                 console.log("Player: " + playerCount + 
                             "\nBot: " + cpuCount);
             }
             else if(cpuMove == gameArray[2]) {
-                alert("You lose");
+                move = "You lose";
                 cpuCount++;
                 console.log("Player: " + playerCount + 
                             "\nBot: " + cpuCount);
@@ -63,19 +69,19 @@ function outcomeCalc() {
 
         case gameArray[2]:
             if(cpuMove == gameArray[0]) {
-                alert("You lose");
+                move = "You lose";
                 cpuCount++;
                 console.log("Player: " + playerCount + 
                             "\nBot: " + cpuCount);
             }
             else if(cpuMove == gameArray[1]) {
-                alert("You win");
+                move = "You win";
                 playerCount++;
                 console.log("Player: " + playerCount + 
                             "\nBot: " + cpuCount);
             }
             else if(cpuMove == gameArray[2]) {
-                alert("DRAW");
+                move = "DRAW";
                 console.log("Player: " + playerCount + 
                             "\nBot: " + cpuCount);
             }
@@ -83,8 +89,24 @@ function outcomeCalc() {
     }
 }
 
-function buttonChoice(buttonID) {
-    playerMove = buttonID;
+function updateScore() {
+    
+}
 
-    gamePlay();
+function scoreCheck() {
+    playerCount = document.getElementById(playerScore).innerText;
+    cpuCount = document.getElementById(cpuScore).innerText;
+
+    if(playerCount = "5") {
+        document.getElementById(moveDisplay).innerText = "Player Wins!!!";
+    }
+
+    else if(cpuCount = "5") {
+        document.getElementById(moveDisplay).innerText = "Bot Wins!!!";
+    }
+
+}
+
+function restart() {
+
 }

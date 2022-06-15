@@ -6,20 +6,11 @@ div#container {
     padding: 100px;
 }
 
-div#scoreDisplay {
+div.display {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin: 10;
     padding: 10px;
-}
-
-div#buttonDisplay {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10;
-    padding: 10;
 }
