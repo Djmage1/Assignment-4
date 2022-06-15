@@ -3,5 +3,5 @@ function operate() {
 
     calculation = eval(equation);
 
-    console.log(calculation);
+    document.getElementById("display").value = calculation;
 }
